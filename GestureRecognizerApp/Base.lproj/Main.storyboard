@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1vY-dJ-4I9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1vY-dJ-4I9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,11 +22,20 @@
                                     <constraint firstAttribute="width" secondItem="vzu-ag-5c0" secondAttribute="height" multiplier="4:3" id="hqY-Sh-KRj"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LHX-fg-aoI">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LHX-fg-aoI">
                                 <rect key="frame" x="30" y="315.5" width="354" height="265.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LHX-fg-aoI" secondAttribute="height" multiplier="4:3" id="sBt-A3-0y9"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4hX-LU-9UJ" appends="YES" id="j8f-q7-FfX"/>
+                                    <outletCollection property="gestureRecognizers" destination="2T0-QA-iSz" appends="YES" id="3MX-xk-O6h"/>
+                                    <outletCollection property="gestureRecognizers" destination="gfB-T9-lUQ" appends="YES" id="FVS-rs-YyL"/>
+                                    <outletCollection property="gestureRecognizers" destination="SFo-vi-C1r" appends="YES" id="ABN-Xr-KkR"/>
+                                    <outletCollection property="gestureRecognizers" destination="FFb-4b-jXv" appends="YES" id="y0h-5z-GuU"/>
+                                    <outletCollection property="gestureRecognizers" destination="pkp-dT-fR2" appends="YES" id="OUI-Ee-PG0"/>
+                                    <outletCollection property="gestureRecognizers" destination="XMJ-zf-afZ" appends="YES" id="7cP-P2-NIL"/>
+                                </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="F5B-W4-Gii">
                                 <rect key="frame" x="192" y="433" width="30" height="30"/>
@@ -88,6 +97,9 @@
                                     <constraint firstAttribute="width" secondItem="7R8-YF-gYy" secondAttribute="height" multiplier="1:1" id="Bqj-R1-LWN"/>
                                     <constraint firstAttribute="width" constant="100" id="K8k-Uf-fIU"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="m34-Ll-DuL" appends="YES" id="ncr-Df-v9r"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sMc-Av-5w2"/>
@@ -115,6 +127,46 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R3G-5H-kaQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="4hX-LU-9UJ">
+                    <connections>
+                        <action selector="did2Taps:" destination="1vY-dJ-4I9" id="uNq-6l-tUj"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="2T0-QA-iSz">
+                    <connections>
+                        <action selector="didSwipeGesture:" destination="1vY-dJ-4I9" id="2b9-JV-Sqg"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="gfB-T9-lUQ">
+                    <connections>
+                        <action selector="didSwipeGesture:" destination="1vY-dJ-4I9" id="b4h-OZ-85f"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="SFo-vi-C1r">
+                    <connections>
+                        <action selector="didSwipeGesture:" destination="1vY-dJ-4I9" id="hyc-LJ-JuI"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="FFb-4b-jXv">
+                    <connections>
+                        <action selector="didSwipeGesture:" destination="1vY-dJ-4I9" id="Dsn-KO-WLS"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="pkp-dT-fR2">
+                    <connections>
+                        <action selector="didlongPressGesture:" destination="1vY-dJ-4I9" id="wNC-eQ-zcD"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pinchGestureRecognizer id="XMJ-zf-afZ">
+                    <connections>
+                        <action selector="didZoomGesture:" destination="1vY-dJ-4I9" id="TBD-9W-5RD"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="m34-Ll-DuL">
+                    <connections>
+                        <action selector="homeButtonGesture:" destination="1vY-dJ-4I9" id="ea8-Bx-VfH"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="914" y="82"/>
         </scene>
